@@ -1,0 +1,1132 @@
+
+%% bare_jrnl_transmag.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% see http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE 
+%% Transactions on Magnetics journal paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[journal,transmag]{IEEEtran}
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[journal]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+%\ifCLASSOPTIONcaptionsoff
+%  \usepackage[nomarkers]{endfloat}
+% \let\MYoriglatexcaption\caption
+% \renewcommand{\caption}[2][\relax]{\MYoriglatexcaption[#2]{#2}}
+%\fi
+% endfloat.sty was written by James Darrell McCauley, Jeff Goldberg and 
+% Axel Sommerfeldt. This package may be useful when used in conjunction with 
+% IEEEtran.cls'  captionsoff option. Some IEEE journals/societies require that
+% submissions have lists of figures/tables at the end of the paper and that
+% figures/tables without any captions are placed on a page by themselves at
+% the end of the document. If needed, the draftcls IEEEtran class option or
+% \CLASSINPUTbaselinestretch interface can be used to increase the line
+% spacing as well. Be sure and use the nomarkers option of endfloat to
+% prevent endfloat from "marking" where the figures would have been placed
+% in the text. The two hack lines of code above are a slight modification of
+% that suggested by in the endfloat docs (section 8.4.1) to ensure that
+% the full captions always appear in the list of figures/tables - even if
+% the user used the short optional argument of \caption[]{}.
+% IEEE papers do not typically make use of \caption[]'s optional argument,
+% so this should not be an issue. A similar trick can be used to disable
+% captions of packages such as subfig.sty that lack options to turn off
+% the subcaptions:
+% For subfig.sty:
+% \let\MYorigsubfloat\subfloat
+% \renewcommand{\subfloat}[2][\relax]{\MYorigsubfloat[]{#2}}
+% However, the above trick will not work if both optional arguments of
+% the \subfloat command are used. Furthermore, there needs to be a
+% description of each subfigure *somewhere* and endfloat does not add
+% subfigure captions to its list of figures. Thus, the best approach is to
+% avoid the use of subfigure captions (many IEEE journals avoid them anyway)
+% and instead reference/explain all the subfigures within the main caption.
+% The latest version of endfloat.sty and its documentation can obtained at:
+% http://www.ctan.org/pkg/endfloat
+%
+% The IEEEtran \ifCLASSOPTIONcaptionsoff conditional can also be used
+% later in the document, say, to conditionally put the References on a 
+% page by themselves.
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage{pstricks,amsmath,amssymb,bm,graphicx,float}
+\begin{document}
+%
+% paper title[H]
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Importance sampling of thermally induced switching and non-switching in spin-torque magnetic nano-devices}
+
+
+
+% author names and affiliations
+% transmag papers use the long conference author name format.
+
+\author{\IEEEauthorblockN{ YiMing Yu \IEEEauthorrefmark{1},
+Cyrill B. Muratov\IEEEauthorrefmark{1},and
+Richard O. Moore \IEEEauthorrefmark{1}}
+\IEEEauthorblockA{\IEEEauthorrefmark{1}New Jersey Institute of Technology, Newark, NJ 07102, USA}% <-this % stops an unwanted space
+%\thanks{Manuscript received December 1, 2012; revised August 26, 2015. 
+%Corresponding author: M. Shell (email: http://www.michaelshell.org/contact.html).}
+}
+
+
+
+% The paper headers
+%\markboth{Journal of \LaTeX\ Class Files,~Vol.~14, No.~8, August~2015}%
+%{Shell \MakeLowercase{\textit{et al.}}: Bare Demo of IEEEtran.cls for IEEE Transactions on Magnetics Journals}
+% The only time the second header will appear is for the odd numbered pages
+% after the title page when using the twoside option.
+% 
+% *** Note that you probably will NOT want to include the author's ***
+% *** name in the headers of peer review papers.                   ***
+% You can use \ifCLASSOPTIONpeerreview for conditional compilation here if
+% you desire.
+
+
+
+
+% If you want to put a publisher's ID mark on the page you can do it like
+% this:
+%\IEEEpubid{0000--0000/00\$00.00~\copyright~2015 IEEE}
+% Remember, if you use this you must call \IEEEpubidadjcol in the second
+% column for its text to clear the IEEEpubid mark.
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+% for Transactions on Magnetics papers, we must declare the abstract and
+% index terms PRIOR to the title within the \IEEEtitleabstractindextext
+% IEEEtran command as these need to go into the title area created by
+% \maketitle.
+% As a general rule, do not put math, special symbols or citations
+% in the abstract or keywords.
+\IEEEtitleabstractindextext{%
+\begin{abstract}
+Spin-torque transfer magnetoresistive random access computer memory (STT-MRAM) has the potential to be a universal memory. However, due to thermal fluctuations, the switching time of the memory device is a random stochastic variable. As a result, thermal fluctuations will induce ``soft'' error rates for writing (WSER) and for reading (RSER) for spin-torque memory devices. In paper, spin-torque memory devices that have a free layer with easy axis parallel to the thin film plane are studied for its RSER with read currents less than the critical value of switching and for its WSER with write currents greater than the critical value of switching. As a computationally alternative to solving the Fokker-Planck equation, we present an importance sampling method to estimate the RSER and the WSER of the spin-torque memory nano-devices. We use importance sampling to demonstrate reliable estimation of the RSER and the WSER for both a macrospin model and a coupled spin system.
+\end{abstract}
+
+% Note that keywords are not normally used for peerreview papers.
+\begin{IEEEkeywords}
+rare event, importance sampling, spin-torque transfer, macrospin magnetic, micromagnetics  
+\end{IEEEkeywords}}
+
+
+
+% make the title area
+\maketitle
+
+
+% To allow for easy dual compilation without having to reenter the
+% abstract/keywords data, the \IEEEtitleabstractindextext text will
+% not be used in maketitle, but will appear (i.e., to be "transported")
+% here as \IEEEdisplaynontitleabstractindextext when the compsoc 
+% or transmag modes are not selected <OR> if conference mode is selected 
+% - because all conference papers position the abstract like regular
+% papers do.
+\IEEEdisplaynontitleabstractindextext
+% \IEEEdisplaynontitleabstractindextext has no effect when using
+% compsoc or transmag under a non-conference mode.
+
+
+
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+% The very first letter is a 2 line initial drop letter followed
+% by the rest of the first word in caps.
+% 
+% form to use if the first word consists of a single letter:
+% \IEEEPARstart{A}{demo} file is ....
+% 
+% form to use if you need the single drop letter followed by
+% normal text (unknown if ever used by the IEEE):
+% \IEEEPARstart{A}{}demo file is ....
+% 
+% Some journals put the first two words in caps:
+% \IEEEPARstart{T}{his demo} file is ....
+% 
+% Here we have the typical use of a "T" for an initial drop letter
+% and "HIS" in caps to complete the first word.
+\IEEEPARstart{S}{pin-torque} transfer magnetoresistive random access computer memory (STT-MRAM) has the potential to be a universal memory because it is designed to have all the best attributes of static RAM, dynamic RAM, and Flash  \cite{5467394},\cite{5424368},\cite{4242474}. It makes use of the magnetism of electron spin to store information. The information in term of bit is stored as the relative orientations of the directions of the two ferromagnetic layers in the MTJ. These two layers are the free layer and the fixed layer. The two stable states are the high resistance state, where the two layers are antiparallel, and the low resistance state, where the two layers are parallel. 
+
+A memory device should switch quickly and reliably when switching is intended and otherwise maintain its current state. However, due to the stochastic effects in STT-MRAM small thermal fluctuations induce occasional switching or failure to switch. This leads to various reliability questions for STT-MRAM such as write error rate, read error rate, and retention failure rate. These questions can by answered by analyzing the time evolution of the switching probability of the STT-MRAM.  The ``soft'' error rate for reading (RSER) is the cumulative switching probability for a given applied read current pulse of a given time duration. The typical read error rate of a single read in STT-MRAM is range between $10^{-21}$ and $10^{-23}$ \cite{7035342}, \cite{Apalkov:2013:STM:2463585.2463589}. It is critical to accurate compute such low probability \cite{6332615}.
+
+The time evolution of the switching probability of the STT-MRAM can be low $(\ll 10^{-9})$ or high $(\approx 1)$ depending on the current and thermal energy. For a macrospsin approximation of STT-MRAM, the RSER can be computed by solving the Fokker-Planck (FP) equation or can be approximated by Brown-Kramers formula. The Brown-Kramers formula provides an upper limit for the RSER and it overestimates the RSER in short read time  \cite{6242414}. Furthermore, effects in coupled spin system can not be captured in macrospin approximation. To achieve a better understanding of switching probability beyond the macrospin approximation, effects of coupling between local spin and micromagnetic  must be taken into account. 
+
+In this paper, we approximate the switching probability of the STT-MRAM using Monte Carlo simulation, especially important sampling (IS). In section II, we review the importance sampling method and we describe methods to compute optimal control for importance sampling. We apply the importance sampling method to sample switching probability of a marospin approximation for the STT-MRAM and compare simulation results with the numerical solution of the Fokker-Planck equation. In section III, we apply the importance sampling method to a coupled spin system with different controls according to the coupling strength of spins. 
+
+
+
+% needed in second column of first page if using \IEEEpubid
+%\IEEEpubidadjcol
+
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+
+
+
+\section{Importance sampling}
+\subsection{Importance sampling}
+The ``soft'' error rates for writing and reading for spin-torque memory device within the macrospin approximation are studied \cite{6242414}. Importance splitting, referred as Rare event enhancement, has been applied to approximate the  error rates for writing for spin-transfer-torque random access memory \cite{7491203}. Here we are interested in approximate the error rates for reading for STT-MRAM using importance sampling method within the macrospin approximation and beyond. 
+
+We are interested in compute expected value of a random variable $Y = I(\omega), \mathbb{E}[I(\omega)]$, where $\omega$ is assumed to be a random variable with density $P_0$ and $I$ is an indicator function with value $1$ or $0$. Then the crude Monte Carlo method estimates 
+\begin{equation}
+P= \mathbb{E}[I(\omega)] = \int I(\omega)P_0(\omega)d\omega \  
+\end{equation}
+by
+\begin{equation}
+\hat{P}_{MC} = \frac 1 M \sum_{i=1}^M I(\omega_i),
+\end{equation}
+where $\omega_i, i = 1, 2 ,3 ..., M,$ are independently and identically distributed. The coefficient of variation is given by 
+\begin{equation}
+CV(P_{MC}) = \frac{\sqrt{Var(P_{MC} )}}{\mathbb{E}[P_{MC}]}  = \frac{1}{\sqrt{M}} \sqrt{\frac{1}{ P}-1},
+\end{equation}
+which increases as $P$ decreases. 
+In IS, we sample $\tilde{\omega}$ from alternative probability density $P_u$. The unbiased estimator is weighted by the likelihood ratio $L$ in the following way,
+\begin{equation}
+ \hat{P}_{IS} = \frac 1 M \sum_{i=1}^M I(\tilde{\omega}_i)L(\tilde{\omega}_i),
+\end{equation}
+where $L(\omega) = {P_0(\omega)}/{P_u(\omega)}$, assuming that $P_u(\omega) >0$ whenever $h(\omega)P_u(\omega) \ne 0.$ The coefficient of variation of importance sampling estimator is given by 
+\begin{equation}
+CV(P_{IS}) = \frac{\sqrt{Var(P_{IS} )}}{\mathbb{E}_{P_u}[P_{IS}]}  = \frac{1}{\sqrt{M}}\sqrt{\frac{\mathbb{E}_{P_u}[I(\omega)L^2]}{ \mathbb{E}_{P_u}[P_{IS}]^2}-1}, 
+\end{equation}
+where $1/P \ge {\mathbb{E}_{P_u}[I(\omega)L^2]}/P^2 \ge 1$ \cite{Rubino:2009:RES:1643623}. In a ``good" IS, ${\mathbb{E}_{P_u}[I(\omega)L^2]}/P^2 $ is close to 1.
+\subsection{Importance sampling for diffusion process}
+We consider the following diffusion process
+%%%%
+ \begin{equation} \label{eqn:dp}
+d X = b(X(t))dt + \epsilon \sigma(X(t))dW(t),
+\end{equation}
+%%%%
+with associated path measure $P_0$. To make the rare events happen more often, we carefully choose a control $u(X(t))$ and  add it in the above diffusion process in a way that the control alters the mean of the Brownian path as follow
+%%%%
+\begin{equation} \label{eqn:controlsystem}
+ d \tilde{X} = b(\tilde{X}(t))dt +  \sigma(\tilde{X}(t))(u(\tilde{X}(t))dt +  \epsilon dW(t),
+ \end{equation}
+ %%%
+with associated path measure $P_u$. By Girsanov's theorem the likelihood ratio is given by   
+\begin{equation}
+L = \exp(-\frac{1}{2\epsilon^2}\int_t^T|u(X(t))|^2 dt - \frac{1}{\epsilon}\int_t^T \left<u(X(t)),dW(t)\right>).
+\end{equation}
+\\
+The optimal control $u^*$ can be obtained by solved minimizing the Freidlin-Wentzell large deviation action \cite{RES_Eric}
+\begin{equation} \label{min_Action}
+\phi_{t,x}(t)  \in \arg\ \inf_{\phi(T) = x_t} \int_t^T \frac{1}{2}| \sigma(\phi(s))^{-1}(\dot{\phi}(s) - b(\phi(s)))|^2 ds
+\end{equation}
+and the finite-time control $u^*$ is given by 
+\begin{equation} \label{control:1}
+u^*_T(x(t)) = \sigma(x)^{-1}(\dot{\phi}_{t,x}(t) - b(x)).
+\end{equation}
+In our case, we have $\sigma(x) = I$. The finite time minimizer $\phi_{t,x}^T(t)$ of the large deviation action can be obtained by solving the following Euler-Lagrange equation: 
+\begin{align} \label{Eqn:E_L} \nonumber
+&\phi_{tt} - (\nabla b(\phi) -\nabla b^T(\phi)  )\phi_{t} - \nabla b^T(\phi) b(\phi) = 0 , t \in [t,T]\\ 
+&\phi(t) = \phi_t,  \phi(T) = \phi_T.  
+\end{align}
+In this paper, the Euler-Lagrange equation is solved by Newton's iterations method and improved adaptive minimum Action method \cite{IAMAM} for short time $T$. 
+If $T \rightarrow \infty$ in Eqn. (\ref{min_Action}), the corresponding Euler-Lagrange equation can be solved by geometric minimum Action method \cite{heymann_geometric_2008}.
+If $T \rightarrow \infty$ in Eqn. (\ref{min_Action}) and Eqn. (\ref{eqn:dp}) is an one dimensional gradient flow \cite{freidlin_random_2012},
+then the infinite-time control $u^*$ 
+\begin{equation} \label{control:2} 
+u^*_\infty(x) = -2\sigma^{-1}(x){b(x)}.
+\end{equation}
+To carry out the importance sampling method, we simulate the Eqn. (\ref{eqn:controlsystem}) using Euler-Maruyama method using the infinite-time control and using the finite-time control for time where the infinite-time control does't work well.  
+
+Let's define the ratio 
+\begin{equation}
+R = \frac{CV(P_{MC}) }{CV(P_{IS}) } \approx \frac{1}{P \exp(o(1)/\epsilon)},
+\end{equation} 
+provided $\exp(o(1)/\epsilon)$ bounded \cite{RES_Eric}. Based on the central limit theorem, the variances of the two methods decrease as $1/M$. If the coefficient of variation of IS reaches a certain constant with $M$ samples, it requires $R M$ samples for coefficient of variation of MC to achieve the same constant. Thus, the ratio $R$ is the speed-up factor of IS, if the computational cost for computing the optimal control does not included. This is the case when the IS uses an analytical control. 
+
+To consider the computational costs for both methods, let  $g_{i,j}$ be the computational cost for $j$th Euler-Maruyama step without computing the control numerically for the $i$th sample and  $f_{i,j}$ be the computation cost for computing the optimal control for $j$ step for the $i$th sample. Thus the total computational cost for IS with $M$ samples can be expressed by 
+\begin{equation}
+C_{IS} =\sum_{i = 1}^M \sum_j (g_{i,j} + f_{i,j}). 
+\end{equation}
+To achieve the same accuracy of IS, the total computational cost for MC can be expressed by 
+\begin{equation}
+C_{MC} =R \sum_{i = 1}^M \sum_j g_{i,j}. 
+\end{equation}
+Assume the time discretization of both of the methods are the same and all the simulations stop only end terminal time $T$. One can show that if 
+\begin{eqnarray}
+R \ge \frac{g_{max}+f_{max}}{g_{min}},
+\end{eqnarray}
+we have $ C_{MC} \ge C_{IS}$, where $f_{max}$ is the maximum value among all $f_{i,j}$, $g_{min}$ is the minimum value among all $g_{i,j}$ and $g_{max}$ is the maximun value among all $g_{i,j}$. Notice that $f = O(N \log (N))$ if the control is computed by GMAM with linear convergence where $N$ is the number of discretization along the optimal path. Typically $g = O(1)$. Thus if 
+\begin{eqnarray}
+R \ge  O(N \log (N)),
+\end{eqnarray}
+we have $ C_{MC} \ge C_{IS}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Macrospin approximation and switching probability}
+
+We start from the standard stochastic Landau-Lifshitz-Gilbert (LLG) equation \cite{GaraCervera2007NumericalMA} :
+\begin{equation}
+\frac{\partial{\bf{m}}}{\partial t} = - {\bf{m}}\times{\bf{h}} + {\bf{m}}\times(-\alpha{\bf{m}}\times{\bf{h}} + a_J {\bf{m}}_p),
+\label{eq:LLG}
+\end{equation}
+where ${\bf{m}}(t) = (m_1(t),m_2(t),m_3(t))$ is a unit vector whose direction is parallel to the magnetization of a magnetic system with constant strength $M_s$ and $a_J  {\bf{m}}\times( {\bf{m}}_p)$ is a STT term, modeling the transfer of angular momentum to the magnetization from the electron spin in a polarized current in the direction of a unit vector ${\bf{m}}_p$  \cite{Newhall_Eric}. The $a_J$ is  non-dimensional current strength, and  \begin{align}
+{\bf{h}} = -\frac{\delta E}{\delta {\bf{m}}} + \sqrt{\frac{2\alpha \epsilon}{1+\alpha^2}}\boldsymbol{\eta}(t),
+\end{align}
+with the energy per volume 
+\begin{align} 
+E = \int_{\Omega}\,d^3r [a|\nabla{\bf{m}}|^2 + (\beta_y m_2^2+\beta_z m_3^2) - h_x m_1].
+\label{E:nonuniform}
+\end{align}
+and 
+$\boldsymbol{\eta}(t)$ is uncorrelated, independent, Gaussian space-time white noise in Stratonovich sense. 
+The noise coefficient, $\sqrt{{2\alpha \epsilon}/(1+\alpha^2)}$, is consistent with the Gibbs distribution and 
+$$
+\epsilon = \kappa_B T/\mu_0 M_s^2\nu
+$$
+is the dimensionless temperature. The constant $\mu_0$ is the permeability of the vacuum, $\kappa_B$ is the Boltzmann constant ($\kappa_B = 1.38054 \times 10^{-23}$ Joules/degree), $T$ is the absolute temperature, and $\nu$ is the volume of $\Omega$.
+For simplicity, we assume ${\bf{m}}_p = (1,0,0)$ and  $a_J$ is a constant.
+
+In the macrospin approximation, Eqn. (\ref{eq:LLG}) is an ordinary differential equation. The energy per volume is given by 
+%
+\begin{equation} \label{E:uniform}
+E({\bf{m}}) =  \beta_y m_2^2+\beta_z m_3^2- h_x m_1.
+\end{equation}
+%
+Under the transformation
+%  
+\begin{equation}
+{\bf{m}} = (\cos(\theta) \sqrt{1-z^2}, \sin(\theta) \sqrt{1-z^2},z), 
+\end{equation}
+%
+In the thin film limit of (\ref{E:uniform}), where $\beta_z \rightarrow \infty$, physically it implies  an out-of-plane magnetization in a thin film element is strongly energetically penalized, and the magnetization tends to remain in-plane \cite{Kohn2005}. In this limit, The LLG equation reduces to 
+\begin{equation}  \label{sys:macro}
+ \dot{\theta} = b(\theta)+ \frac{1}{ \sqrt{\Delta}} \dot{W},
+\end{equation}
+and  
+\begin{equation} 
+b(\theta) = (I_J-h -\cos(\theta))\sin(\theta), 
+\end{equation}
+ where the time is nondimensionalized by $2\alpha \beta_y \gamma \mu_0 M_s/(1+\alpha^2).$   %beta_y = K_u/(\mu_0 M_x^2) 
+The non-dimension parameters are the current $ I_J= \frac{a_J}{2 \alpha \beta_y},$ the external field $h = \frac{h_x}{2 \beta_y},$ and the thermal stability factor $ \Delta = \frac{k_B T}{K_u \nu}.$ In our computation and simulation,  the values of parameters are $h = 0$,  $ \Delta=30$ or $60$ and different values of $I_J$ \cite{6242414}.
+
+While $ \theta =\cos^{-1}(I_J-h)$  is the correct value separating the basins of attraction of the two stable fixed points, $\theta = 0$ and $\theta = \pi$, but it is often physically convenient to use a more conservative switching criterion, which you take to be when the macrospin crosses $\theta = \pi/2.$ In our simulation, the starting point is $\theta(0) = 0$ and it can be a random variable from a distribution. Since the system is periodic and symmetry at $\theta=0$, we can reduce the entire domain of the system to its subdomain $\theta = [0,\pi]$ with a reflective boundary condition at $\theta = 0$.
+
+%%%% backward Fokker-Plank equation %%%%%%%
+
+The exact finite time switching probability can be computed by solving the backward Fokker-Planck equation \cite{gardiner2004handbook}, which is given by 
+\begin{equation} \label{bfp:1}
+\frac{\partial \rho_{sw}}{\partial \tau}  
+=  b(\theta)\frac{\partial  \rho_{sw} }{\partial \theta} +  \frac{1}{2 \Delta}  \frac{\partial^2  \rho_{sw}}{\partial^2 \theta}
+\end{equation}
+with initial condition 
+\begin{equation}
+\rho_{sw}(\theta,0) = 0 , \ \ \theta \in (0,\pi/2],
+\end{equation}
+and boundary conditions 
+\begin{equation}
+\rho_{sw}(\pi/2,\tau) = 1, \   \  \frac{\partial \rho_{sw}}{\partial \theta}(0,\tau)  = 0. 
+\end{equation}
+Thus if you are interested in computing the switching probability before time $T$ with a starting point $\theta^* \in [0,\pi/2]$, for example a stable fixed point, then it is given by  $\rho_{sw}(\theta^*,T).$
+
+Consider the macrospin model, Eqn. (\ref{sys:macro}), is a gradient flow, then the infinity time control  for importance sampling is given by 
+%
+\begin{equation} \label{control:u}
+  u_\infty(\theta) = \begin{cases}
+     -2b(\theta), & 0 \leqslant \theta \leqslant \cos^{-1}(I_J-h); \\
+    0, & \text{Otherwise},
+  \end{cases}
+\end{equation}
+%
+and we simulate the controlled dynamic
+ \begin{equation}
+  \dot{\theta}  = b(\theta) +u_\infty(\theta) +  \frac{1}{ \sqrt{\Delta}} \dot{W},
+ \end{equation}
+with $\theta(0) = 0$. In other words, the control is applied whenever $\theta$ is in the basin of attraction of the fixed point $\theta = 0.$  Simulation results and performance of importance sampling are showed in Fig. \ref{fig:MacroIS60} to Fig. \ref{fig:MacroIS30_cv}.
+%%%%%%%%%%%%%
+\begin{figure}[H]
+   \centering
+         \includegraphics[width =3.5in]{figs/macrospin/Psw_60_is}    
+        % \includegraphics[width =3.5in]{figs/macrospin/Psw_30_is_part1} 
+            \caption{Switching probability, ``soft'' error rates for reading,  at a given reading pulse duration $T$ and reading current $I_J$ with thermal stability factor $\Delta = 60.$ Solid lines denote numerical solutions of Fokker-Planck equation. Dots denote estimators generated by importance sample method with sample size of $10^3$. For $T \ge 5$ the infinite-time control is used for importance sampling and  for $T \le 5$ the finite-time control is used for importance sampling. The dash solid line is the leading order approximation of the backward Fokker-Planck equation for short time.}
+   \label{fig:MacroIS60}
+\end{figure}
+%
+%\begin{figure}[h]
+%   \centering
+%         %\includegraphics[width =3.5in]{figs/macrospin/Psw_30_is}    
+%         \includegraphics[width =3.5in]{figs/macrospin/Psw_60_is_part2} 
+%            \caption{Switching probability, ``soft'' error rates for reading,  at a given reading pulse duration $T$ and reading current $I_J$ with thermal stability factor $\Delta = 60$ for time between 0.4 and 2. The black dash line is the leading order approximation of the backward Fokker-Planck equation for short time.}
+%   \label{fig:MacroIS60_1}
+%\end{figure}
+%
+Fig. \ref{fig:MacroIS60} shows that RSER as a function of time for seven values of $I_J$ between $0$ and $ 0.6$ with thermal stability factor fixed at $\Delta = 60$. When $I_J = 0$, no current is applied and the device is off power. It also shows a comparison between the numerical solutions of the backward Fokker-Planck equation and importance sampling results for macrospin model with $\Delta$ fixed at $60$. Similar results are presented for $\Delta = 30$ in Fig. \ref{fig:MacroIS30}.  Solid lines are numerical solutions to Fokker-Planck equation for an initial at the stable fixed point $\theta = 0$. Dots are estimators generated by importance sampling of the macrospin model starting at the stable fixed point $\theta = 0$ with sample size of $10^3$. For $T \ge 5$, the infinite-time control is used for the importance sampling while for $T \le 6$, the finite-time control is used for the importance sampling. There is an overlap at $T = 5$ and $T = 6$ and the sampling results with both controls agree with each other. 
+\begin{figure}[h]
+   \centering
+         %\includegraphics[width =2.5in]{figs/macrospin/Psw_30_is}    
+         \includegraphics[width =3.6in]{figs/macrospin/Psw_60_is_cv} 
+            \caption{Coefficient of variations of importance sample estimators in Fig.\ref{fig:MacroIS60}. Different colors of dots correspond to different currents in Fig.\ref{fig:MacroIS60}.}
+   \label{fig:MacroIS60_cv}
+\end{figure}
+
+Fig. \ref{fig:MacroIS60_cv} shows the coefficient of variations of importance sample estimators with $\Delta$ fixed at 60.  Similar results are presented for $\Delta = 30$ in Fig. \ref{fig:MacroIS30_cv}. The color scheme of the dots or squares is same for the color scheme of  Fig. \ref{fig:MacroIS60} for different currents.  The dots represent  the CVs of the IS estimators using infinite-time control for time between 5 and 20.  The squares represent the CVs of the IS estimators using finite-time control for time less than and equal to 6. 
+
+The coefficient of variations of the estimators gets larger as terminal time $T$ for switching probability gets closer to 5, which indicates that the infinite-time control becomes less efficient as terminal time $T$ for switching probability gets closer to 5 and in practice the control system with infinite-time control generates less and less switching events, eventually no switching event. By applying the finite-time control to the system for time less than 6 the coefficient of variations of the estimators becomes smaller comparing the coefficient of variations of the estimators generated by infinite-time control. Furthermore, the finite-time control for importance sampling allow us to sampling switching probability in short time. 
+
+\begin{figure}[h]
+   \centering
+         \includegraphics[width = 3.6in]{figs/macrospin/Psw_30_is}   
+         %\includegraphics[width = 3.6in]{figs/macrospin/Psw_60_is_part2}             
+        % \includegraphics[width = 2.5in]{figs/macrospin/Psw_60_is_cv}
+   \caption{Switching probabilities, ``soft'' error rates for reading,  at a given reading pulse duration $T$ and reading current $I_J$ with thermal stability factor $\Delta = 30.$ Solid lines denote numerical solutions of Fokker-Planck equation. Dots denote estimators generated by importance sample method with sample size of $10^3$. For $T \ge 5$ the infinite-time control is used for importance sampling and  for $T \le 4$ the finite-time control is used for importance sampling. The dash solid line is the leading order approximation of the backward Fokker-Planck equation for short time.}
+   \label{fig:MacroIS30}
+\end{figure}
+
+%\begin{figure}[H]
+%   \centering
+%         %\includegraphics[width = 3.6in]{figs/macrospin/Psw_60_is}   
+%         \includegraphics[width = 3.6in]{figs/macrospin/Psw_30_is_part1}             
+%        % \includegraphics[width = 2.5in]{figs/macrospin/Psw_60_is_cv}
+%   \caption{RSER at a given pulse duration and reading current strength $I_J$ with thermal stability factor is $\Delta = 30.$ Solid lines denote numerical solutions of Fokker-Planck equation for various current $I_J$. Dots denotes estimators generated by importance sample method with sample size of $10^3$.}
+%   \label{fig:MacroIS30_1}
+%\end{figure}
+
+\begin{figure}[h]
+   \centering
+        % \includegraphics[width = 2.5in]{figs/macrospin/Psw_60_is}            
+         \includegraphics[width = 3.6in]{figs/macrospin/Psw_30_is_cv}
+   \caption{Coefficient of variations of importance sample estimators in Fig.\ref{fig:MacroIS30}. Dots denotes coefficient of variations  of estimators generated by IS with sample size of $10^3$. Different colors of dots correspond to different currents in Fig. \ref{fig:MacroIS30}.}
+   \label{fig:MacroIS30_cv}
+\end{figure}
+
+Fig.\ref{fig:MacroIS30} shows that RSER as a function of time for seven values of $I_J$ between $0$ and $ 0.6$ with fixed at $\Delta = 30$.  The Figures also show a comparison between the numerical solution of the backward Fokker-Planck equation and importance sampling of macrospin model with $\Delta$ fixed at $30$. 
+Solid lines are numerical solutions to Fokker-Planck equation for an initial at the stable fixed point $\theta = 0$. Dots are estimators generated by importance sampling of the macrospin model starting at the stable fixed point $\theta = 0$ with sample size of $10^3$. For $T \ge 5$, the infinite-time control is used for the importance sampling while for $T \le 4$, the finite-time control is used for the importance sampling.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{figure}[h]
+   \centering
+        % \includegraphics[width = 2.5in]{figs/macrospin/Psw_60_is}            
+         \includegraphics[width = 3.6in]{figs/macrospin/Two_tialsofCV_I_J_03}
+   \caption{Coefficient of variations of importance sample estimators for $I_J = 0.3$ with infinite-time control. The sample size of this data is $10^5$. (b) is the histogram of the exit time for the controlled system. (c) is the estimated likelihood ratio over time. (d) is the probability of switching before time $T$. Here the probability of switching before time $T$ is approximated by the accumulated sum of the likelihood ratio before time $T$ over $10^5$.}
+   \label{fig:Two_tialsofCV_I_J_03}
+\end{figure}
+%%%%%%%%%
+
+Fig. \ref{fig:MacroIS60_cv} and  Fig. \ref{fig:MacroIS30_cv} show a similar pattern of the CVs generated by IS with infinite-time control. Between 5 and 20, The CVs are large at the two ends and small in the middle for each $I_J$. One of the factors is that the exit time density of the control dynamic system is small at these two ends (See Fig. \ref{fig:Two_tialsofCV_I_J_03}) because the infinite-time control only depends on the state of the system and the finite noise has impact on the spread of the exit time density of the controlled system. Other factor is that the likelihood ratio becomes more spread as time increases.  To overcome these shortcomings, a finite-time control is used for short time in this paper and this also can be done for long time. Other possible approach is using control that includes effect of the finite noise.    
+
+\section{Two coupled spins system}
+We assume the two spins in our model have identical volume with a total of a unit volume and coupled through exchange energy.
+%%%%%%%%% 2 spin equations%%%%%%%
+The two coupled spins system is given by
+\begin{align} \label{sys:N2}  \nonumber 
+ \dot{\theta}_1 &=\frac{4a}{\beta_y}( \theta_{2} -  \theta_{1} ) +\sin(\theta_1)(I_J - \cos(\theta_1)) + \sqrt{\frac{2}{{\Delta}}}\dot{W_1},\\  \nonumber
+  \dot{\theta}_2 &=\frac{4a}{\beta_y}( \theta_{1} -  \theta_{2} ) +\sin(\theta_2)(I_J - \cos(\theta_2))+ \sqrt{ \frac{2}{{\Delta}}}\dot{W_2}, 
+ \end{align}
+with initial conditions are $\theta_i(0) = 0, i = 1,2.$ The parameter $\beta_y = 1/2$ for all the simulations in this paper. For simplicity, we sample in the domain of $[0,\pi] \times [0,\pi]$. The switching criterion of this system is that the average of two spins greater and equal to $\pi/2$.  
+
+If the coupling strength $a$ is large enough, the dynamic of the two coupled spin system is identical to dynamic of the macrosoin model and the most probable switching paths of each spin in the coupled system are the same as the most probable switching path of the spin in macrospin model. If the coupling strength $a$ is small, the dynamic of the two coupled spin system is very different from the dynamic of the macrosoin model and the most probable switching paths of each spin in the coupled system are that one spin switches first then the other spin switches afterward. Thus, depending on the coupling strength in the system the way we obtain a control for importance sampling can be different. 
+%
+%
+\subsection{Infinite-time control based on macrospin model}
+Considering the coupling strength of the two spins are strong, meaning that $a$ is large, the two spins stay close and the difference of the two spins are very small. While the difference of the two spins are very small, the relevant dynamic of the two coupled spins system is dominated by affect of the anisotropy energy, the external field energy and the STT term, except the exchange energy. As long as the two spins stay close as the result of the exchange energy, the infinite-time control based on the macrospin model can be approximated by 
+ \begin{equation} 
+u_\infty= \left[ \begin {array}{c}
+ -2b(\theta_1)\\ 
+ -2b(\theta_2)\\
+ \end {array}
+ \right], 
+ \end{equation}
+ where $ 0 \leqslant \theta_i \leqslant \cos^{-1}(I_J-h) , i = 1,2,$ otherwise, we don't add any force. The coupling strengths are chosen to be $ a = 1$ and $a = 0.1$. The system is strongly coupled when $a$ is $1$. 
+
+Moreover, two coupled spin system is a gradient system, the infinity time least action path connected a stable fixed point and a saddle point follows the time reversing trajectory. However, the infinity time least action path with an arbitrary initial point in the basin of attraction of a stable fixed point does not necessary follow the time reversing trajectory starting with this arbitrary initial point. Reversing the sign of the coupling term in system will keep the two spins away from each other.   
+%%%%%%%%%%%%
+\begin{figure}[h]
+   \centering
+         \includegraphics[width =3.4in]{figs/2spins/Psw_60_is_N2_a1}   
+   \caption{RSER of a two coupled spin system with applied currents ranging from $0$ to $0.6$ at time $T$ with non-dimensional temperature $\Delta = 60$ and coupling strength $ a = 1$. Sample size is $10^3$. The dots denote estimators generated by IS. Solid lines denote numerical solutions of Fokker-Planck equation for various current $I_J$. The black dash line is the leading order approximation of the backward Fokker-Planck equation for short time.}
+   \label{figs:ISvsMC1_0}
+\end{figure}
+\begin{figure}[h]
+   \centering
+         \includegraphics[width =3.4in]{figs/2spins/Psw_60_is_N2_a1_cv}   
+   \caption{Coefficient of variations of importance sample estimators in Fig. \ref{figs:ISvsMC1_0}. Dots denotes coefficient of variations  of estimators generated by IS with sample size of $10^3$. Different colors of dots correspond to different currents in Fig. \ref{figs:ISvsMC1_0}.}
+   \label{figs:ISvsMC1_0_cv}
+\end{figure}
+%%%%%%%%%%%%
+
+Fig. \ref{figs:ISvsMC1_0} shows the switching probabilities as a function of time for different reading currents.  The dots denote estimators generated by importance sampling. Solid lines denote numerical solutions of Fokker-Planck equation of the macrospin model for various reading current $I_J$. With $a = 1$, the system is strongly coupled and its switching probabilities are the same as that of the macrospin model. With sampling size of $10^3$, the infinite-time control allow us to sample switching probabilities such that $T \ge 5$. The infinite-time control becomes less efficient for short time as Fig. \ref{figs:ISvsMC1_0_cv} shows the coefficient of variations become larger as time become shorter. To overcome the shortcoming of infinite-time control, we can use finite-time control for the importance sampling. (See Fig. \ref{figs:ISvsMC1_short}).
+%%%%%%%%%%%%%%%
+  \begin{figure}[h]
+   \centering
+         \includegraphics[width =3.4in]{figs/2spins/P_sw_N2_a01_I_J}    
+         %\includegraphics[width =2.5in]{figs/2spins/P_sw_N2_a01_cv_I_J}    
+   \caption{RSER of a two coupled spin system with various applied current pulses at time $T$ with non-dimensional temperature $\Delta = 60$ and exchange strength $ a = 0.1$. Sample size $10^6$.}
+   \label{figs:ISvsMC2}
+\end{figure}
+Fig. \ref{figs:ISvsMC2} shows switching probabilities generated by IS and MC with different applied current pulses for read at different given pulse durations.  Each dot is generated by IS with sample size of $10^6$ and each circle is generated by MC with sample size of $10^6$ as well. It shows that as the applied current pulse decreases the switching probabilities of the system decreases. As the switching probabilities are less than $10^{-6}$, the MC fails to capture these probabilities while importance sampling is able to estimate these probabilities that ranges from $10^{-23}$ to $10^{-2}$ for all different applied currents that  ranges from $0$ to $0.7$.  The lines are linearly connected between the two nearby estimators with the same current at different times. With sampling size of $10^6$, the infinite-time control allow us to sample switching probabilities such that $T \ge 3$. 
+%%%%%%%%%%%%%%%
+  \begin{figure}[h]
+   \centering
+         %\includegraphics[width =2.5in]{figs/2spins/P_sw_N2_a01_I_J}    
+         \includegraphics[width =3.5in]{figs/2spins/P_sw_N2_a01_cv_I_J}    
+   \caption{Coefficient of variations of estimators generated by IS (red) and MC (blue) in Figure \ref{figs:ISvsMC2}. $\Delta = 60, a = 0.1$. Sample size is $10^6$. }
+   \label{figs:ISvsMC2_cv}
+\end{figure}
+%
+Fig. \ref{figs:ISvsMC2_cv} shows the CV of the estimators in Fig. \ref{figs:ISvsMC2}. The red dots denote CV of estimators generated by IS. The blue dots denote CV of estimators generated by MC. As the targeted switching probability gets smaller, the CV of the  estimator generated by MC becomes larger.  For IS, as the current decreases, which leads to a smaller switching probability, but the CVs of the estimators generated by IS increase as well. In general, IS performs better than MC. 
+
+%%%%%%%%%%%%
+  \begin{figure}[h]
+   \centering
+         \includegraphics[width =3.4in]{figs/2spins/P_sw_N2_a01}    
+         %\includegraphics[width =3in]{figs/2spins/P_sw_N2_a01_cv}    
+   \caption{RSER of a two coupled spin system with applied current pulse $I_J = 0.7$ at time $T$ with non-dimensional temperature $\Delta = 60$ and exchange strength $ a = 0.1$. Sample size is $10^6$. The red dots denote estimators generated by IS.  The blue circles denote estimators generated by MC.  }
+   \label{figs:ISvsMC1_1}
+\end{figure}
+%%%%%%%%%%%
+Fig. \ref{figs:ISvsMC1_1} servers as a validation of importance sampling by Monte Carlo simulation. We choose a high current $I_J = 0.7$ to conduct our simulations so that the switching probabilities are high. In this case, the Monte Carlo simulation can generate estimators with small coefficient of variation (CV) with sample size of $10^6$ (See Fig. \ref{figs:ISvsMC1_2}). 
+Fig. \ref{figs:ISvsMC1_1}  shows that the switching probabilities estimated by both methods lie on the same curve where switching probabilities are greater than and equal to $10^{-4}$, which is expected. The dots and the circles denotes the switching probabilities of the two coupled spin system. Each dot is generated by IS with sample size of $10^6$. Each circle is generated by MC with sample size of $10^6$ as well.  The difference between the estimators generated by IS and MC are below $10^{-4}$ for all pulse duration.
+  \begin{figure}[h]
+   \centering
+         %\includegraphics[width =3in]{figs/2spins/P_sw_N2_a01}    
+         \includegraphics[width =3.4in]{figs/2spins/P_sw_N2_a01_cv}    
+   \caption{Coefficient of variations of estimators generated by IS (red) and MC (blue) in Fig. \ref{figs:ISvsMC1_1}. $\Delta = 60, a = 0.1$. }
+   \label{figs:ISvsMC1_2}
+\end{figure}
+%
+Fig. \ref{figs:ISvsMC1_2} shows that the CV of IS is smaller than the CV of MC, which is true in general when the estimated probability is small ($ \le 10^{-3})$, with the same sample size. Fig. \ref{figs:ISvsMC1_2} shows that the CVs of MC are many times greater than the CVs of MC, ranging from 2 to 17. In other words, to achieve the same accuracy in term of confident interval, estimator generated by MC has to have sample size twice or more. For example, for an applied pulse during of $10$, it requires MC with sample size about $10^8$ to achieve the same accuracy of estimators generated by IS with only $10^6$.
+%
+\subsection{Finite-time control}
+In order to sample the switching probability for time interval in which importance sampling with infinite-time control can not generate good sample, it is necessary to have a time-dependent control, called the finite-time control. For our coupled system the finite-time control can be obtained by minimizing the Freidlin-Wentzell large deviation action subjected to the switching criterion such that the average spins equal to the $\pi/2$ at the terminal time. In other words, the objective of the large deviation action is given by
+\begin{equation}
+S =   \inf_{\phi(T)_1+ \phi(T)_2 =\pi} \int_t^T \frac{1}{2}| \sigma(\phi(s))^{-1}(\dot{\phi}(s) - b(\phi(s)))|^2 ds
+\end{equation}
+and the finite-time control $u^*$ is given by 
+\begin{align} 
+u^*_T(x(t)) = \sigma(x)^{-1}(\dot{\phi}_{t,x}(t) - b(x)).
+\end{align}
+Numerically this can be done by solving the Euler-Lagrange equations, Eqn.(\ref{Eqn:E_L}) with a given initial and a given terminal point with minimum action method or newton's method and minimizing the action with terminal point on the line $\phi(T)_1+ \phi(T)_2 =\pi$.
+
+%%%%%%%%%%%%
+\begin{figure}[h]
+   \centering
+         %\includegraphics[width =3.4in]{figs/2spins/Psw_60_is_N2_a1}  
+         \includegraphics[width =3.4in]{figs/2spins/Psw_60_is_N2_a1_short}    
+   \caption{RSER of a two coupled spin system with applied currents ranging from $0$ to $0.6$ at time $T$ with non-dimensional temperature $\Delta = 60$ and coupling strength $ a = 1$. Sample size is $10^3$. The dots denote estimators generated by IS. Solid lines denote numerical solutions of Fokker-Planck equation for various current $I_J$. }
+   \label{figs:ISvsMC1_short}
+\end{figure}
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%
+\begin{figure}[h]
+   \centering
+         %\includegraphics[width =3.4in]{figs/2spins/Psw_60_is_N2_a1}  
+         \includegraphics[width =3.4in]{figs/2spins/Psw_60_is_N2_a1_short_cv}    
+   \caption{Coefficient of variations of importance sample estimators in Fig.\ref{figs:ISvsMC1_short}. Dots denotes coefficient of variations of estimators generated by IS with sample size of $10^3$. Different colors of dots correspond to different currents in Fig. \ref{figs:ISvsMC1_short} }
+   \label{figs:ISvsMC1_short_cv}
+\end{figure}
+%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ \begin{figure}[h]
+   \centering
+         \includegraphics[width =3.5in]{figs/2spins/P_sw_N2_a01_I_J_two_control}    
+        % \includegraphics[width =3.5in]{figs/2spins/P_sw_N2_a01_cv_I_J_timecontrol}    
+   \caption{RSER of a two coupled spin system with applied current pulse $I_J = 0.7$ at time $T$ with non-dimensional temperature $\Delta = 60$ and exchange strength $ a = 0.1$. Sample size is $10^6$. The red dots denote estimators generated by IS.  The blue circles denote estimators generated by MC. }
+\end{figure}
+%
+Fig. \ref{figs:ISvsMC1_short} and Fig. \ref{figs:ISvsMC1_short_cv} show results and performance of importance sampling method for the coupled system with sample size of $10^3$. For $T \ge 5$, the infinite-time control is used for importance sampling. For $T \le 4$, the finite-time control is used for importance sampling.  
+%  \begin{figure}[H]
+%   \centering
+%         %\includegraphics[width =3.5in]{figs/2spins/P_sw_N2_a01_I_J_two_control}    
+%         \includegraphics[width =3.5in]{figs/2spins/P_sw_N2_a01_cv_I_J_timecontrol}    
+%   \caption{ }
+%\end{figure}
+\subsection{Choosing the biasing}
+The dynamic of the coupled spin system depends continuously on the coupling strength $a$. If the coupling strength between spins are large, the coupled spin system behave as same as the macrospin model. In this case, the optimal control can be approximated by the optimal control of the macrospin model, which is analytical. However, as the coupling strength $a$ decreases, bifurcation may occurs and the coupled spin system is not the same as the macropsin model. In this case, the finite-time control can be solved by GMAM. In all cases, a finite-time control can be obtained by newton's method or minimum action method. 
+
+ \begin{figure}[h]
+   \centering
+         \includegraphics[width =3.5in]{figs/2spins/P_sw_T20_2}
+        % \includegraphics[width =3.5in]{figs/2spins/P_sw_T20_2_CV}
+   \caption{$N = 2, I_J= 0.6$. Sample size of GMAM is $10^4$. Sample size for MC and and Potential  is $10^6$. $T = 20$. For $a \in [0.01, 0.1]$, the switching probability before $20$ $ns$  of the two couple system increases increases as $a$ deceases.}
+      \label{figs:ISvsMC3}
+\end{figure}
+
+Fig. \ref{figs:ISvsMC3} shows switching probabilities generated by Monte Carlo and importance sampling for different coupling strength ranging from $0.01$ to $0.1$. The blue dots denote results generated by importance sampling using the analytical control $u_{\infty}$  based on the macrospin model for each spin. The red dots denote results generated by importance sampling using a numerical control that obtained by GMAM. 
+ Fig. \ref{figs:ISvsMC3} also shows that the estimators from different simulations lie inside the $95\%$ confident interval of each other for some $a$. Most of estimators labelled as $u_\infty$ and MC lie within  $95\%$ confident intervals of the estimators labelled as GMAM.
+
+ \begin{figure}[h]
+   \centering
+        % \includegraphics[width =3.5in]{figs/2spins/P_sw_T20_2}
+         \includegraphics[width =3.5in]{figs/2spins/P_sw_T20_2_CV}
+   \caption{$N = 2, I_J = 0.6$. Sample size of GMAM is $10^4$. Sample size for MC and and Potential  is $10^6$. }
+      \label{figs:ISvsMC3_cv}
+\end{figure}
+
+Fig. \ref{figs:ISvsMC3_cv} shows the  coefficient of variations of the results in Fig. \ref{figs:ISvsMC3}. In general, importance sampling method performs better than Monte Carlo method for small probability. 
+
+\section{Non-switched probability}
+In this section, we estimate the ``soft" error rates for writing using importance sampling for both of the macrospin model and two coupled spin system. With small coupling strength and high current, the least action path for non-switching may passes through the second or four quadrants. Thus, the domain of the two coupled spins should be $[-\pi,\pi] \times  [-\pi,\pi ]$ with symmetry on the line $ \theta_1 + \theta_2 = 0$. The two spins are switching at $ \theta_1 + \theta_2 = \pm \pi.$
+
+ \begin{figure}[h]
+   \centering
+        % \includegraphics[width =3.5in]{figs/2spins/P_sw_T20_2}
+         \includegraphics[width =3.5in]{figs/Non_switching/Non_switching_many_Is}
+   \caption{Nonswitched probability using a thermal stability factor of $\Delta = 60$ as a function of time for several values of the reduced current. Each dot represents approximation from importance sampling with sample size of $10^4$. The solid line denotes numerical solution of the backward Fokker-Planck equation. The current $I_J$ ranges from 3 to 6.}
+   \label{fig:NS_maroc}
+\end{figure}
+Fig. \ref{fig:NS_maroc} shows a comparison between the numerical solution
+of the Fokker-Planck equation and importance sampling for the macrospin approximation. Both of approximation are computed for various current $I_J = 3, 4, 5,$ and $6$ with thermal factor $\Delta = 60$. In importance sampling, $10^4$ independent realizations of the system evolution were computed with same initial conditions and independent thermal noise. With sampling size of $10^4$, importance sampling shows good agreement with the numerical solution of the backward Fokker-Planck equation for not very short time. Importance sampling method were able to reliably predict WSER below $10^{-40}$ for an applied current of $I_J = 6$.
+
+ \begin{figure}[ht]
+   \centering
+        % \includegraphics[width =3.5in]{figs/2spins/P_sw_T20_2}
+         \includegraphics[width =3.5in]{figs/Non_switching/Non_switching_many_Is_vs_2spin}
+   \caption{Nonswitched probability using a thermal stability factor of $\Delta = 60$ as a function of time for reduced current $I_J = 3$. Each red dot represents approximation from importance sampling with sample size of $10^3$. The solid line denotes numerical solution of the backward Fokker-Planck equation.}
+   \label{fig:NS_maroc}
+\end{figure}
+
+ \begin{figure}[ht]
+   \centering
+        % \includegraphics[width =3.5in]{figs/2spins/P_sw_T20_2}
+         \includegraphics[width =3.5in]{figs/optimal_path/Exit_Path_large_a}
+   \caption{Optimal path for non-switching for a strongly coupled system.}
+   \label{fig:Non_switching_path}
+\end{figure}
+Fig. \ref{fig:Non_switching_path} shows an optimal control path of non-switching event for a strongly coupled system and it is a finite time least Freidlin-Wentzell action path with an initial point at $(0.2, 0.1)$. This path quickly goes down and stay near the saddle point for a long time.
+
+ \begin{figure}[h]
+   \centering
+        % \includegraphics[width =3.5in]{figs/2spins/P_sw_T20_2}
+         \includegraphics[width =3.5in]{figs/optimal_path/Exit_Path_1d}
+   \caption{Connection between infinite-time control and finite-time control for long time non-switching event in macrospin model.}
+   \label{fig:Non_switching_path_1d}   
+\end{figure}
+Fig \ref{fig:Non_switching_path_1d} shows the connection between infinite-time control and finite-time control for long time non-switching event in macrospin model. The blue solid line is a numerical solution of the Freidlin-Wentzell large deviation action over finite time. The green line is computed according to Eqn. (\ref{control:1}). The dash line is the analytical infinite-time control. The blue solid line suggests that to achieve minimum control over finite time, the control should force the system near the saddle point, keep the system near the saddle point for a long time, and the release the system in a way that the system arrives right before the switching point with the remaining time. It also shows that to push the system back to the fixed point at the beginning, the numerical finite-time control and the analytical infinity time control are the same. However, when the remaining time is too short for system to have a switching, the numerical finite-time control provides no forcing.   
+ \section{Conclusion}
+We have applied importance sampling method to approximate the ``soft" error rate for reading for spin-torque memory devices that are modeled by macrospin approximation and coupled spin system. We also demonstrated statistically reliable prediction of the RSER for the marospin approximation with sets of sample size of $10^3$ for different reduced currents and thermal stability factors. Furthermore,  we  demonstrated prediction of the RSER down to $10^{-30}$ and below for a two coupled spin system with sets of sample size of $10^3$.   The cost of computation for importance sampling using an analytical control is not greater than the cost of computation for MC while the cost of computation for importance sampling using a numerical control can be expensive.  Moreover, using a better approximation of the biasing for the coupled spin system can improve the performance of IS with a smaller variance. We also show that importance sampling method were able to reliably predict WSER below $10^{-40}$ for an applied current of $I_J = 6$ with thermal factor of $\Delta = 60$.
+ 
+% if have a single appendix:
+%\appendix[Proof of the Zonklar Equations]
+% or
+%\appendix  % for no appendix heading
+% do not use \section anymore after \appendix, only \section*
+% is possibly needed
+
+% use appendices with more than one appendix
+% then use \section to start each appendix
+% you must declare a \section before using any
+% \subsection or using \label (\appendices by itself
+% starts a section numbered zero.)
+%
+
+
+%\appendices
+%
+%\section{}
+%Appendix one text goes here.
+%
+%% you can choose not to have a title for an appendix
+%% if you want by leaving the argument blank
+%\section{}
+%Appendix two text goes here.
+
+
+% use section* for acknowledgment
+\section*{Acknowledgment}
+
+
+The authors would like to thank...
+
+
+% Can use something like this to put references on a page
+% by themselves when using endfloat and the captionsoff option.
+\ifCLASSOPTIONcaptionsoff
+  \newpage
+\fi
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+\bibliographystyle{IEEEtran}
+\bibliography{citation} 
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+%
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%
+%\end{thebibliography}
+
+% biography section
+% 
+% If you have an EPS/PDF photo (graphicx package needed) extra braces are
+% needed around the contents of the optional argument to biography to prevent
+% the LaTeX parser from getting confused when it sees the complicated
+% \includegraphics command within an optional argument. (You could create
+% your own custom macro containing the \includegraphics command to make things
+% simpler here.)
+%\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{mshell}}]{Michael Shell}
+% or if you just want to reserve a space for a photo:
+%
+%\begin{IEEEbiography}{Michael Shell}
+%Biography text here.
+%\end{IEEEbiography}
+
+% if you will not have a photo at all:
+%\begin{IEEEbiographynophoto}{John Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% insert where needed to balance the two columns on the last page with
+% biographies
+%\newpage
+
+%\begin{IEEEbiographynophoto}{Jane Doe}
+%Biography text here.
+%\end{IEEEbiographynophoto}
+
+% You can push biographies down or up by placing
+% a \vfill before or after them. The appropriate
+% use of \vfill depends on what kind of text is
+% on the last page and whether or not the columns
+% are being equalized.
+
+%\vfill
+
+% Can be used to pull up biographies so that the bottom of the last one
+% is flush with the other column.
+%\enlargethispage{-5in}
+
+% that's all folks
+\end{document}
+
+
